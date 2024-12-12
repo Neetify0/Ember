@@ -1,2 +1,2 @@
 # Ember
-Ember is a lightweight, blazing fast, and sleek game site!
+Lightweight, blazing fast, and sleek game site!
