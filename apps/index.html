@@ -21,8 +21,17 @@
     </nav>
 
     <div class="center_content">
-        <h1>Ember</h1>
-        <p>Lightweight, blazing fast, and sleek game site!</p>
+        <h1>Apps</h1>
+        <h2 id="random-text"></h2>
+    </div>
+
+    <div class="tile-grid">
+        <div class="tile">
+            <a href="/apps/cobalt/">
+                <img src="/images/cobalt.png" alt="cobalt">
+                <div class="tile-title">cobalt</div>
+            </a>
+        </div>
     </div>
 
     <footer>
@@ -36,6 +45,20 @@
             <a href="/dmca/">DMCA</a>
         </div>
     </footer>
+
+    <script>
+        const phrases = [
+            "Blazing fast website!",
+            '"Can you add Roblox?"',
+            '"Ember, this website is the best!"',
+            "Looking for apps and games?",
+            "Free for everyone!",
+            "lol",
+            "The best apps and games on the web!"
+        ];
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        document.getElementById("random-text").textContent = randomPhrase;
+    </script>
 
 </body>
 </html>
