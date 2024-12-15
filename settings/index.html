@@ -5,25 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="script" href="/cloak.js">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav>
         <a href="/" class="logo">
-            <img src="/images/ember.png" alt="Ember Logo" />
+            <img src="/images/ember.png" alt="Ember Logo">
         </a>
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/apps/">Apps</a>
-            <a href="/games/">Games</a>                 
+            <a href="/games/">Games</a>
             <a href="/settings/">Settings</a>
         </div>
     </nav>
 
     <div class="center_content">
-        <h1>Ember</h1>
-        <p>Lightweight, blazing fast, and sleek game site!</p>
+        <h1>Settings</h1>
+
+        <div class="box-item">
+            <div class="box">
+                <h2>Tab Cloaking</h2>
+                <p>Toggle tab cloaking to hide the URL, change the title, and favicon.</p>
+
+                <div id="cloak-options">
+                    <label for="favicon-url">Logo (optional)</label>
+                    <input type="text" id="favicon-url" placeholder="Enter favicon URL">
+
+                    <label for="page-title">Title (optional)</label>
+                    <input type="text" id="page-title" placeholder="Enter page title">
+
+                    <button onclick="openCloakedTab()">Cloak</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -37,5 +53,7 @@
             <a href="/dmca/">DMCA</a>
         </div>
     </footer>
+
+    <script src="/cloak.js"></script>
 </body>
 </html>
