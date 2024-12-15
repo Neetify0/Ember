@@ -27,9 +27,14 @@
 
         <div class="description-item">
             <div class="description">
-                <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
-                <h2>Cobalt</h2>
-                <p>Cobalt is a video downloader tool</p>
+                <button class="description-btn" onclick="externalTab()">
+                    <img src="/images/external.png" alt="Parent Icon">
+                </button>  
+                <button class="description-btn2" onclick="toggleFullscreen()">
+                    <img src="/images/fullscreen.png" alt="Fullscreen Icon">
+                </button>              
+                <h2>Particle Clicker</h2>
+                <p>Particle Clicker is a game where you build your own lab</p>
             </div>
         </div>
     
@@ -89,6 +94,13 @@
                     document.msExitFullscreen();
                 }
             }
+        }
+
+        function externalTab() {
+            const currentPath = window.location.pathname;
+            const parentFolder = currentPath.substring(currentPath.lastIndexOf('/', currentPath.lastIndexOf('/') - 1) + 1, currentPath.lastIndexOf('/'));
+            const newUrl = `/games/${parentFolder}/${parentFolder}.html`;
+            window.open(newUrl, '_blank');
         }
     </script>
 
