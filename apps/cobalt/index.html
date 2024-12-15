@@ -60,17 +60,13 @@
     </footer>
 
     <script>
-        const phrases = [
-            "Blazing fast website!",
-            '"Can you add Roblox?"',
-            '"Ember, this website is the best!"',
-            "Looking for apps and games?",
-            "Free for everyone!",
-            "lol",
-            "The best apps and games on the web!"
-        ];
-        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-        document.getElementById("random-text").textContent = randomPhrase;
+        function externalTab() {
+            const currentPath = window.location.pathname;
+            const parentFolder = currentPath.substring(currentPath.lastIndexOf('/', currentPath.lastIndexOf('/') - 1) + 1, currentPath.lastIndexOf('/'));
+            const newUrl = `/games/${parentFolder}/${parentFolder}.html`;
+            window.open(newUrl, '_blank');
+        }
+
         function toggleFullscreen() {
             const iframe = document.getElementById('iframe');
             if (!document.fullscreenElement) {
