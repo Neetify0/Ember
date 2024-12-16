@@ -35,3 +35,13 @@ function openCloakedTab() {
     
     win.document.body.appendChild(iframe);
 }
+
+function loadCloakSettings() {
+    const faviconUrl = localStorage.getItem('faviconUrl') || '';
+    const pageTitle = localStorage.getItem('pageTitle') || '';
+
+    document.getElementById('favicon-url').value = faviconUrl;
+    document.getElementById('page-title').value = pageTitle;
+}
+
+document.addEventListener('DOMContentLoaded', loadCloakSettings);

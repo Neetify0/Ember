@@ -22,14 +22,14 @@
     </nav>
 
         <div class="center-content-wrapper">
-            <iframe id="iframe" src="/games/n-gon/n-gon.html" title="Example Site"></iframe>
+            <iframe id="iframe" src="/games/n-gon/n-gon.html" ></iframe>
         </div>       
 
         <div class="description-item">
             <div class="description">
-                <button class="description-btn" onclick="externalTab()">
-                    <img src="/images/external.png" alt="Parent Icon">
-                </button>  
+            <a href="/games/n-gon/n-gon.html" class="description-btn">
+                <img src="/images/external.png" alt="Parent Icon">
+            </a>  
                 <button class="description-btn2" onclick="toggleFullscreen()">
                     <img src="/images/fullscreen.png" alt="Fullscreen Icon">
                 </button>
@@ -38,14 +38,28 @@
             </div>
         </div>
     
-    <div class="tile-grid">
-        <div class="tile">
-            <a href="/apps/cobalt/">
-                <img src="/images/cobalt.png" alt="cobalt">
-                <div class="tile-title">cobalt</div>
-            </a>
+        <div class="tile-grid">
+            <div class="tile">
+                <a href="/games/minecraft/">
+                    <img src="/images/minecraft.png" alt="Minecraft">
+                    <div class="tile-title">Minecraft</div>
+                </a>
+            </div>
+    
+            <div class="tile">
+                <a href="/games/n-gon/">
+                    <img src="/images/n-gon.png" alt="n-gon">
+                    <div class="tile-title">n-gon</div>
+                </a>
+            </div>
+    
+            <div class="tile">
+                <a href="/games/particle_clicker/">
+                    <img src="/images/particle_clicker.png" alt="Particle Clicker">
+                    <div class="tile-title">Particle Clicker</div>
+                </a>
+            </div>
         </div>
-    </div>
 
     <footer>
         <div class="footer-left">
@@ -60,13 +74,6 @@
     </footer>
 
     <script>
-        function externalTab() {
-            const currentPath = window.location.pathname;
-            const parentFolder = currentPath.substring(currentPath.lastIndexOf('/', currentPath.lastIndexOf('/') - 1) + 1, currentPath.lastIndexOf('/'));
-            const newUrl = `/games/${parentFolder}/${parentFolder}.html`;
-            window.open(newUrl, '_blank');
-        }
-
         function toggleFullscreen() {
             const iframe = document.getElementById('iframe');
             if (!document.fullscreenElement) {

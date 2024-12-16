@@ -22,14 +22,14 @@
     </nav>
 
         <div class="center-content-wrapper">
-            <iframe id="iframe" src="https://cobalt.tools" title="Example Site"></iframe>
+            <iframe id="iframe" src="/apps/cobalt/cobalt.html" ></iframe>
         </div>       
 
         <div class="description-item">
             <div class="description">
-                <button class="description-btn" onclick="externalTab()">
-                    <img src="/images/external.png" alt="Parent Icon">
-                </button>  
+            <a href="/apps/cobalt/cobalt.html" class="description-btn">
+                <img src="/images/external.png" alt="Parent Icon">
+            </a>  
                 <button class="description-btn2" onclick="toggleFullscreen()">
                     <img src="/images/fullscreen.png" alt="Fullscreen Icon">
                 </button>
@@ -60,12 +60,7 @@
     </footer>
 
     <script>
-        function externalTab() {
-            const currentPath = window.location.pathname;
-            const parentFolder = currentPath.substring(currentPath.lastIndexOf('/', currentPath.lastIndexOf('/') - 1) + 1, currentPath.lastIndexOf('/'));
-            const newUrl = `/games/${parentFolder}/${parentFolder}.html`;
-            window.open(newUrl, '_blank');
-        }
+
 
         function toggleFullscreen() {
             const iframe = document.getElementById('iframe');
