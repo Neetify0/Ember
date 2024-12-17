@@ -40,6 +40,8 @@ function openCloakedTab() {
     win.document.body.style.overflow = 'hidden';
 
     win.document.body.appendChild(iframe);
+
+    window.close();
 }
 
 function loadCloakSettings() {
