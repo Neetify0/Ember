@@ -1,15 +1,15 @@
 function openCloakedTab() {
-    const faviconUrl = document.getElementById('favicon-url').value || '';
-    const pageTitle = document.getElementById('page-title').value || '';
+    const faviconUrl = localStorage.getItem('faviconUrl') || '';
+    const pageTitle = localStorage.getItem('pageTitle') || '';
     const embedUrl = "/";
 
     localStorage.setItem('faviconUrl', faviconUrl);
     localStorage.setItem('pageTitle', pageTitle);
 
-    const enablePopups = document.getElementById('enable-popups').checked;
+    const enablePopups = localStorage.getItem('enablePopups') === 'true';
 
     if (!enablePopups || window.top !== window) {
-        return; 
+        return; // Don't do anything if we're on the cloaked page (inside an iframe)
     }
 
     const win = window.open();
@@ -47,7 +47,7 @@ function openCloakedTab() {
 function loadCloakSettings() {
     const faviconUrl = localStorage.getItem('faviconUrl') || '';
     const pageTitle = localStorage.getItem('pageTitle') || '';
-    const enablePopups = localStorage.getItem('enablePopups') === 'true';
+    const enablePopups = localStorage.getItem('enablePopups') === 'true'; 
 
     if (document.getElementById('favicon-url')) {
         document.getElementById('favicon-url').value = faviconUrl;
@@ -74,6 +74,18 @@ function savePopupSetting() {
 
 document.addEventListener('DOMContentLoaded', loadCloakSettings);
 
-document.getElementById('enable-popups')?.addEventListener('change', savePopupSetting);
-document.getElementById('favicon-url')?.addEventListener('input', savePopupSetting);
-document.getElementById('page-title')?.addEventListener('input', savePopupSetting);
+if (localStorage.getItem('enablePopups') === 'true' && window.top === window) {
+    openCloakedTab();
+}
+
+if (document.getElementById('enable-popups')) {
+    document.getElementById('enable-popups').addEventListener('change', savePopupSetting);
+}
+
+if (document.getElementById('favicon-url')) {
+    document.getElementById('favicon-url').addEventListener('input', savePopupSetting);
+}
+
+if (document.getElementById('page-title')) {
+    document.getElementById('page-title').addEventListener('input', savePopupSetting);
+}
