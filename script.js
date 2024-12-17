@@ -9,7 +9,7 @@ function openCloakedTab() {
     const enablePopups = localStorage.getItem('enablePopups') === 'true';
 
     if (!enablePopups || window.top !== window) {
-        return; // Don't do anything if we're on the cloaked page (inside an iframe)
+        return;
     }
 
     const win = window.open();
