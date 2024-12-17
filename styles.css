@@ -290,7 +290,7 @@ iframe {
 .description-btn, .description-btn2 {
     position: absolute;
     top: 25px;
-    background-color: #ff5d5d; /* Red background */
+    background-color: #ff5d5d;
     padding: 15px;
     border-radius: 50%;
     font-size: 18px;
@@ -305,13 +305,12 @@ iframe {
 .description-btn img, .description-btn2 img {
     width: 25px;
     height: 25px;
-    filter: brightness(0) invert(1); /* Make images white */
+    filter: brightness(0) invert(1);
 }
 
 .description-btn:hover, .description-btn2:hover {
-    background-color: #e04e4e; /* Darker red on hover */
+    background-color: #e04e4e;
 }
-
 
 input[type="text"] {
     width: 100%;
@@ -327,38 +326,6 @@ input[type="text"] {
 input[type="text"]:focus {
     border-color: #ff5d5d;
     outline: none;
-}
-
-input[type="checkbox"] {
-    appearance: none;
-    width: 50px;
-    height: 30px;
-    background-color: #ccc;
-    border-radius: 20px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s ease;
-    margin-bottom: 10px;
-}
-
-input[type="checkbox"]:checked {
-    background-color: #ff5d5d;
-}
-
-input[type="checkbox"]:before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.3s ease;
-}
-
-input[type="checkbox"]:checked:before {
-    left: 23px;
 }
 
 button {
@@ -421,4 +388,36 @@ form {
 .form-item textarea {
     resize: none;
     min-height: 150px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #ff5d5d;
+}
+
+input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+input[type="checkbox"]:checked:before {
+    left: 23px;
 }
