@@ -23,19 +23,14 @@
 
     <div class="center_content">
         <h1>Games</h1>
+        <h2 id="random-text"></h2>
     </div>
 
     <div class="tile-grid">
         <div class="tile">
-            <a href="/games/super_mario_64">
-                <img src="/images/super_mario_64.png" alt="Super Mario 64">
-                <div class="tile-title">Super Mario 64</div>
-            </a>
-        </div>
-        <div class="tile">
-            <a href="/games/pokemon_fire_red/">
-                <img src="/images/pokemon_fire_red.png" alt="Pokémon Fire Red">
-                <div class="tile-title">Pokemon Fire Red</div>
+            <a href="/games/cookie_clicker/">
+                <img src="/images/cookie_clicker.png" alt="Cookie Clicker">
+                <div class="tile-title">Cookie Clicker</div>
             </a>
         </div>
         <div class="tile">
@@ -47,13 +42,43 @@
         <div class="tile">
             <a href="/games/n-gon/">
                 <img src="/images/n-gon.png" alt="N-gon">
-                <div class="tile-title">N-GON</div>
+                <div class="tile-title">N-gon</div>
+            </a>
+        </div>
+        <div class="tile">
+            <a href="/games/ovo/">
+                <img src="/images/ovo.png" alt="Ovo">
+                <div class="tile-title">Ovo</div>
             </a>
         </div>
         <div class="tile">
             <a href="/games/particle_clicker/">
                 <img src="/images/particle_clicker.png" alt="Particle Clicker">
                 <div class="tile-title">Particle Clicker</div>
+            </a>
+        </div>
+        <div class="tile">
+            <a href="/games/pokemon_fire_red/">
+                <img src="/images/pokemon_fire_red.png" alt="Pokemon Fire Red">
+                <div class="tile-title">Pokemon Fire Red</div>
+            </a>
+        </div>
+        <div class="tile">
+            <a href="/games/pokemon_radical_red/">
+                <img src="/images/pokemon_radical_red.png" alt="Pokemon Radical Red">
+                <div class="tile-title">Pokemon Radical Red</div>
+            </a>
+        </div>
+        <div class="tile">
+            <a href="/games/sandboxels/">
+                <img src="/images/sandboxels.png" alt="Sandboxels">
+                <div class="tile-title">Sandboxels</div>
+            </a>
+        </div>
+        <div class="tile">
+            <a href="/games/super_mario_64/">
+                <img src="/images/super_mario_64.png" alt="Super Mario 64">
+                <div class="tile-title">Super Mario 64</div>
             </a>
         </div>
     </div>
@@ -70,6 +95,19 @@
         </div>
     </footer>
 
-    <script src="/script.js"></script>
+    <script>
+        const phrases = [
+            "Blazing fast website!",
+            '"Can you add Roblox?"',
+            '"Ember, this website is the best!"',
+            "Looking for apps and games?",
+            "Free for everyone!",
+            "lol",
+            "The best apps and games on the web!"
+        ];
+        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+        document.getElementById("random-text").textContent = randomPhrase;
+    </script>
+
 </body>
 </html>
