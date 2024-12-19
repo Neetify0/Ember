@@ -89,7 +89,8 @@ def remake_index_html(directory, game_folders):
         document.getElementById("random-text").textContent = randomPhrase;
     </script>
 
-    <script src="/script.js"></script>    
+        
+    <script src="/script.js"></script> 
     </body>
 </html>"""
     
