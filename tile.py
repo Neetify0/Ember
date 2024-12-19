@@ -26,7 +26,8 @@ def remake_index_html(directory, game_folders):
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-</head>
+     
+    </head>
 <body>
 
     <nav>
@@ -88,7 +89,8 @@ def remake_index_html(directory, game_folders):
         document.getElementById("random-text").textContent = randomPhrase;
     </script>
 
-</body>
+    <script src="/script.js"></script>    
+    </body>
 </html>"""
     
     with open(index_html_path, 'w', encoding='utf-8') as file:
