@@ -1,7 +1,7 @@
 function openCloakedTab() {
     const faviconUrl = localStorage.getItem('faviconUrl') || '';
     const pageTitle = localStorage.getItem('pageTitle') || '';
-    const embedUrl = "/";
+    const embedUrl = window.location.href;
 
     localStorage.setItem('faviconUrl', faviconUrl);
     localStorage.setItem('pageTitle', pageTitle);
