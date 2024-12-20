@@ -90,7 +90,7 @@ def remake_index_html(directory, game_folders):
     </script>
 
         
-    <script src="/cloak.js"></script> 
+    <script src="/script.js"></script> 
     </body>
 </html>"""
     
