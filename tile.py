@@ -27,7 +27,8 @@ def remake_index_html(directory, game_folders):
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
      
-</head>
+    <script src="/cloak.js"></script> 
+    </head>
 <body>
 
     <nav>
@@ -90,7 +91,7 @@ def remake_index_html(directory, game_folders):
     </script>
 
         
-    <script src="/cloak.js"></script> 
+    
     </body>
 </html>"""
     
