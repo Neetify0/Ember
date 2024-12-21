@@ -1,6 +1,6 @@
 function openCloakedTab() {
-    const faviconUrl = localStorage.getItem('faviconUrl') || '';
-    const pageTitle = localStorage.getItem('pageTitle') || '';
+    const faviconUrl = 'https://www.google.com/favicon.ico';
+    const pageTitle = 'Google';
     const embedUrl = localStorage.getItem('redirect') || '/';
 
     const win = window.open();

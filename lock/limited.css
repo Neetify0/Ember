@@ -1,9 +1,9 @@
 * {
-    box-sizing: border-box;
     font-family: 'Lexend', sans-serif;
 }
 
 nav {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +38,7 @@ nav {
 }
 
 footer {
+    box-sizing: border-box;
     color: white;
     padding: 10px 30px;
     display: flex;
