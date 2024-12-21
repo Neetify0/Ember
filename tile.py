@@ -27,9 +27,13 @@ def remake_index_html(directory, game_folders):
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
      
+<<<<<<< HEAD
     <script src="/cloak.js"></script> 
     <script src="/lock.js"></script> 
     </head>
+=======
+</head>
+>>>>>>> parent of f430508 (Made tab cloaking script always load)
 <body>
 
     <nav>
@@ -92,7 +96,7 @@ def remake_index_html(directory, game_folders):
     </script>
 
         
-    
+    <script src="/cloak.js"></script> 
     </body>
 </html>"""
     
