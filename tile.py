@@ -73,7 +73,8 @@ def remake_index_html(directory, game_folders):
             <a href="/faq/">FAQ</a>
             <a href="/feedback/">Feedback</a>
             
-            <a href="/dmca/">DMCA</a>
+            <a href="/dmca/">DMCA</a>       
+            <a href="/credits/">Credits</a>
         </div>
     </footer>
 
