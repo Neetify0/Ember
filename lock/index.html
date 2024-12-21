@@ -15,13 +15,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
 
         <style>
-            .staticrypt-hr {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border: 0;
-                border-top: 1px solid #eee;
-            }
-
             .staticrypt-page {
                 width: 360px;
                 padding: 8% 0 0;
@@ -32,12 +25,11 @@
             .staticrypt-form {
                 position: relative;
                 z-index: 1;
-                background: #ffffff;
+                background: #101010;
                 max-width: 360px;
                 margin: 0 auto 100px;
                 padding: 45px;
                 text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
             }
 
             .staticrypt-form input[type="password"],
@@ -49,16 +41,19 @@
                 outline: 0;
                 padding: 15px 30px 15px 15px; /* Adjust the padding to ensure there is space for the icon */
                 width: 100%;
+                color: #fff;
+                border-radius: 15px;
             }
 
             .staticrypt-password-container {
                 position: relative;
                 outline: 0;
-                background: #f2f2f2;
+                background: #333;
                 width: 100%;
                 border: 0;
                 margin: 0 0 15px;
                 box-sizing: border-box;
+                border-radius: 15px;
             }
 
             .staticrypt-toggle-password-visibility {
@@ -71,6 +66,7 @@
                 top: 50%;
                 transform: translateY(-50%);
                 width: 20px;
+                filter: invert(100%);
             }
 
             .staticrypt-form .staticrypt-decrypt-button {
@@ -83,6 +79,7 @@
                 color: #ffffff;
                 font-size: 14px;
                 cursor: pointer;
+                border-radius: 15px;
             }
 
             .staticrypt-form .staticrypt-decrypt-button:hover,
@@ -112,10 +109,13 @@
             .staticrypt-instructions {
                 margin-top: -1em;
                 margin-bottom: 1em;
+                color: #fff;
             }
 
             .staticrypt-title {
-                font-size: 1.5em;
+                font-size: 50px;
+                color: #fff;
+                margin-bottom: -10px;
             }
 
             label.staticrypt-remember {
@@ -192,8 +192,6 @@
                         <p><p>PASSWORD RESTRICTED TO DENY ACCESS TO UNAUTHORIZED USERS</p>
 </p>
                     </div>
-
-                    <hr class="staticrypt-hr" />
 
                     <form id="staticrypt-form" action="#" method="post">
                         <div class="staticrypt-password-container">
