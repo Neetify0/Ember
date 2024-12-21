@@ -151,6 +151,30 @@ a {
     margin: 0 auto;
 }
 
+@media (max-width: 1200px) {
+    .tile-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .tile-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .tile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .tile {
     position: relative;
     background-color: #181818;
@@ -165,7 +189,7 @@ a {
 .tile img {
     width: 100%;
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
