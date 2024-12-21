@@ -28,7 +28,7 @@ def remake_index_html(directory, game_folders):
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
      
     <script src="/cloak.js"></script> 
-    <script src="/lock.js"></script> 
+    <script src="/redirect.js"></script> 
     </head>
 <body>
 
