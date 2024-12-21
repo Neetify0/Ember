@@ -29,5 +29,5 @@ function openCloakedTab() {
 
     localStorage.setItem('redirect', '/');
     
-    window.close();
+    window.location.href = 'about:blank';
 }
