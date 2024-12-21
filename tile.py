@@ -31,9 +31,6 @@ def remake_index_html(directory, game_folders):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of f71681a (Solved conflicts)
     <script src="/cloak.js"></script> 
     <script src="/lock.js"></script> 
     </head>
@@ -43,15 +40,12 @@ def remake_index_html(directory, game_folders):
 =======
 </head>
 >>>>>>> parent of f430508 (Made tab cloaking script always load)
-<<<<<<< HEAD
 =======
 </head>
 >>>>>>> parent of f430508 (Made tab cloaking script always load)
 =======
 </head>
 >>>>>>> parent of f430508 (Made tab cloaking script always load)
-=======
->>>>>>> parent of f71681a (Solved conflicts)
 <body>
 
     <nav>
