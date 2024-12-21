@@ -14,3 +14,8 @@ if (window.location.pathname !== '/lock/') {
         window.location.href = '/lock/';
     }
 }
+
+if (window.location.href !== 'about:blank' && window.top === window.self && window.location.pathname !== '/cloak/') {
+    localStorage.setItem('redirect', window.location.href);
+    window.location.href = '/cloak/';
+}
