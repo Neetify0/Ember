@@ -1,7 +1,7 @@
 **/node_modules/
 *.db
-data/minify/package-redirect.json
-package-redirect.json
+data/minify/package-lock.json
+package-lock.json
 yarn.lock
 roms/
 data/emulator.min.js
