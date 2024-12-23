@@ -6,6 +6,7 @@
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+     
     <script src="/cloak.js"></script> 
     <script src="/redirect.js"></script> 
     </head>
@@ -25,6 +26,9 @@
 
     <div class="center_content">
         <h1>Apps</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search">
+        </div>
     </div>
 
     <div class="tile-grid">
@@ -48,7 +52,37 @@
             <a href="/credits/">Credits</a>
         </div>
     </footer>
+    <script>
+        function searchGames() {
+            var input, filter, tiles, tile, title, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            tiles = document.getElementsByClassName('tile');
+            
+            for (i = 0; i < tiles.length; i++) {
+                tile = tiles[i];
+                title = tile.getElementsByClassName('tile-title')[0];
+                txtValue = title.textContent || title.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tile.classList.remove('hide');
+                } else {
+                    tile.classList.add('hide');
+                }
+            }
+        }
         
-    
+        document.getElementById('searchInput').addEventListener('keyup', searchGames);
+    </script>
+    <style>
+        .tile {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+            
+        .tile.hide {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+    </style>
     </body>
 </html>
