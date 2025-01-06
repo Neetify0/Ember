@@ -1,5 +1,13 @@
 import os
 
+directory = r'C:\\Users\\Namel\\OneDrive\\Documents\\Ember\\images'
+
+for filename in os.listdir(directory):
+    base_file, ext = os.path.splitext(filename)
+    if ext.lower() != '.png':
+        new_filename = base_file + '.png'
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
+
 directories = [
     r'C:\Users\Namel\OneDrive\Documents\Ember\games',
     r'C:\Users\Namel\OneDrive\Documents\Ember\apps'
@@ -14,7 +22,7 @@ def get_game_folders(directory):
     return game_folders
 
 def capitalize_title(title):
-    return ' '.join([word.capitalize() for word in title.split('_')])
+    return ' '.join([word.capitalize() for word in title.split('-')])
 
 def remake_index_html(directory, game_folders):
     index_html_path = os.path.join(directory, 'index.html')
@@ -48,7 +56,9 @@ def remake_index_html(directory, game_folders):
 
     <div class="center_content">
         <h1>{directory.split(os.sep)[-1].capitalize()}</h1>
-        <h2 id="random-text"></h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search">
+        </div>
     </div>
 
     <div class="tile-grid">"""
@@ -79,23 +89,38 @@ def remake_index_html(directory, game_folders):
             <a href="/credits/">Credits</a>
         </div>
     </footer>
-
-    <script>
-        const phrases = [
-            "Blazing fast website!",
-            '"Can you add Roblox?"',
-            '"Ember, this website is the best!"',
-            "Looking for apps and games?",
-            "Free for everyone!",
-            "lol",
-            "The best apps and games on the web!"
-        ];
-        const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-        document.getElementById("random-text").textContent = randomPhrase;
-    </script>
-
-        
     
+    <script>
+        function searchGames() {
+            var input, filter, tiles, tile, title, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            tiles = document.getElementsByClassName('tile');
+            
+            for (i = 0; i < tiles.length; i++) {
+                tile = tiles[i];
+                title = tile.getElementsByClassName('tile-title')[0];
+                txtValue = title.textContent || title.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tile.classList.remove('hide');
+                } else {
+                    tile.classList.add('hide');
+                }
+            }
+        }
+        
+        document.getElementById('searchInput').addEventListener('keyup', searchGames);
+    </script>
+    <style>
+        .tile {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+            
+        .tile.hide {
+            display: none;
+        }
+    </style>
+
     </body>
 </html>"""
     
