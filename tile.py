@@ -2,6 +2,8 @@ import os
 
 directory = r'C:\\Users\\Namel\\OneDrive\\Documents\\Ember\\images'
 
+
+
 for filename in os.listdir(directory):
     base_file, ext = os.path.splitext(filename)
     if ext.lower() != '.png':
@@ -34,12 +36,9 @@ def remake_index_html(directory, game_folders):
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-     
     <script src="/cloak.js"></script> 
-
-    
     <script src="/redirect.js"></script> 
-    </head>
+</head>
 <body>
 
     <nav>
@@ -65,14 +64,10 @@ def remake_index_html(directory, game_folders):
     
     for game_folder in game_folders:
         game_name = capitalize_title(game_folder)
-        image_path = f"/images/{game_folder}.png"
         html_content += f"""
-        <div class="tile">
-            <a href="/{directory.split(os.sep)[-1]}/{game_folder}/">
-                <img src="{image_path}" alt="{game_name}">
-                <div class="tile-title">{game_name}</div>
-            </a>
-        </div>"""
+        <button class="tile" onclick="window.location.href='/{directory.split(os.sep)[-1]}/{game_folder}/'">
+            <div class="tile-title">{game_name}</div>
+        </button>"""
     
     html_content += """
     </div>
@@ -84,7 +79,6 @@ def remake_index_html(directory, game_folders):
         <div class="footer-right">
             <a href="/faq/">FAQ</a>
             <a href="/feedback/">Feedback</a>
-            
             <a href="/dmca/">DMCA</a>       
             <a href="/credits/">Credits</a>
         </div>
@@ -112,20 +106,17 @@ def remake_index_html(directory, game_folders):
         document.getElementById('searchInput').addEventListener('keyup', searchGames);
     </script>
     <style>
-        .tile {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-            
         .tile.hide {
             display: none;
         }
     </style>
 
-    </body>
+</body>
 </html>"""
     
     with open(index_html_path, 'w', encoding='utf-8') as file:
         file.write(html_content)
+
 
 for directory in directories:
     game_folders = get_game_folders(directory)

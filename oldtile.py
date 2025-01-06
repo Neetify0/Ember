@@ -1,4 +1,32 @@
-<!DOCTYPE html>
+import os
+
+directory = r'C:\\Users\\Namel\\OneDrive\\Documents\\Ember\\images'
+
+for filename in os.listdir(directory):
+    base_file, ext = os.path.splitext(filename)
+    if ext.lower() != '.png':
+        new_filename = base_file + '.png'
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
+
+directories = [
+    r'C:\Users\Namel\OneDrive\Documents\Ember\games',
+    r'C:\Users\Namel\OneDrive\Documents\Ember\apps'
+]
+
+def get_game_folders(directory):
+    game_folders = []
+    for folder in os.listdir(directory):
+        folder_path = os.path.join(directory, folder)
+        if os.path.isdir(folder_path):
+            game_folders.append(folder)
+    return game_folders
+
+def capitalize_title(title):
+    return ' '.join([word.capitalize() for word in title.split('-')])
+
+def remake_index_html(directory, game_folders):
+    index_html_path = os.path.join(directory, 'index.html')
+    html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +34,12 @@
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+     
     <script src="/cloak.js"></script> 
+
+    
     <script src="/redirect.js"></script> 
-</head>
+    </head>
 <body>
 
     <nav>
@@ -24,16 +55,26 @@
     </nav>
 
     <div class="center_content">
-        <h1>Apps</h1>
+        <h1>{directory.split(os.sep)[-1].capitalize()}</h1>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search">
         </div>
     </div>
 
-    <div class="tile-grid">
-        <button class="tile" onclick="window.location.href='/apps/cobalt/'">
-            <div class="tile-title">Cobalt</div>
-        </button>
+    <div class="tile-grid">"""
+    
+    for game_folder in game_folders:
+        game_name = capitalize_title(game_folder)
+        image_path = f"/images/{game_folder}.png"
+        html_content += f"""
+        <div class="tile">
+            <a href="/{directory.split(os.sep)[-1]}/{game_folder}/">
+                <img src="{image_path}" alt="{game_name}">
+                <div class="tile-title">{game_name}</div>
+            </a>
+        </div>"""
+    
+    html_content += """
     </div>
 
     <footer>
@@ -43,6 +84,7 @@
         <div class="footer-right">
             <a href="/faq/">FAQ</a>
             <a href="/feedback/">Feedback</a>
+            
             <a href="/dmca/">DMCA</a>       
             <a href="/credits/">Credits</a>
         </div>
@@ -70,10 +112,21 @@
         document.getElementById('searchInput').addEventListener('keyup', searchGames);
     </script>
     <style>
+        .tile {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+            
         .tile.hide {
             display: none;
         }
     </style>
 
-</body>
-</html>
+    </body>
+</html>"""
+    
+    with open(index_html_path, 'w', encoding='utf-8') as file:
+        file.write(html_content)
+
+for directory in directories:
+    game_folders = get_game_folders(directory)
+    remake_index_html(directory, game_folders)
