@@ -31,7 +31,7 @@
     </div>
 
     <div class="tile-grid">
-        <button class="tile" onclick="window.location.href='/apps/cobalt/'">
+        <button class="tile" onclick="loadGameIframe('/apps/cobalt/')">
             <div class="tile-title">Cobalt</div>
         </button>
     </div>
@@ -74,6 +74,14 @@
             display: none;
         }
     </style>
+
+    <script>
+        function loadGameIframe(gameUrl) {
+            window.location.href = '/iframe/?=' + gameUrl;
+            const iframe = document.getElementById('gameIframe');
+            iframe.src = gameUrl;
+        }
+    </script>
 
 </body>
 </html>

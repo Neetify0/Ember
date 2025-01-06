@@ -65,7 +65,7 @@ def remake_index_html(directory, game_folders):
     for game_folder in game_folders:
         game_name = capitalize_title(game_folder)
         html_content += f"""
-        <button class="tile" onclick="window.location.href='/{directory.split(os.sep)[-1]}/{game_folder}/'">
+        <button class="tile" onclick="loadGameIframe('/{directory.split(os.sep)[-1]}/{game_folder}/')">
             <div class="tile-title">{game_name}</div>
         </button>"""
     
@@ -110,6 +110,14 @@ def remake_index_html(directory, game_folders):
             display: none;
         }
     </style>
+
+    <script>
+        function loadGameIframe(gameUrl) {
+            window.location.href = '/iframe/?=' + gameUrl;
+            const iframe = document.getElementById('gameIframe');
+            iframe.src = gameUrl;
+        }
+    </script>
 
 </body>
 </html>"""

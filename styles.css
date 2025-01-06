@@ -182,9 +182,10 @@ iframe {
     color: white;
     border-radius: 15px;
     padding: 20px;
-    width: 1500px;
-    height: 300px;
+    width: 1770px;
+    height: 105px;
     text-align: left;
+    margin-bottom: 100px;
 }
 
 .description-btn {
@@ -286,7 +287,7 @@ button:hover {
 
 .tile-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     padding: 20px;
     margin: 0 auto;
@@ -295,7 +296,7 @@ button:hover {
 button.tile {
     background-color: #151515;
     color: white;
-    padding: 12px 20px;
+    padding: 100px 90px;
     border-radius: 15px;
     font-size: 18px;
     border: none;
@@ -311,36 +312,6 @@ button.tile {
 
 button.tile:hover {
     background-color: #ff5d5d;
-}
-
-@media (max-width: 1500px) {
-    .tile-grid {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-
-@media (max-width: 1200px) {
-    .tile-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .tile-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .tile-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .tile-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 form {
