@@ -314,6 +314,40 @@ button.tile:hover {
     background-color: #ff5d5d;
 }
 
+@media (max-width: 1500px) {
+    .tile-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    button.tile {
+        padding: 80px 70px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .tile-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    button.tile {
+        padding: 60px 50px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tile-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    button.tile {
+        padding: 40px 30px;
+        font-size: 12px;
+    }
+}
+
+
 form {
     background-color: #181818;
     color: white;
