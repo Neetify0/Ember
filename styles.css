@@ -296,9 +296,9 @@ button:hover {
 button.tile {
     background-color: #151515;
     color: white;
-    padding: 100px 90px;
+    padding: 100px 60px;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 25px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -321,7 +321,6 @@ button.tile:hover {
 
     button.tile {
         padding: 80px 70px;
-        font-size: 16px;
     }
 }
 
@@ -332,7 +331,6 @@ button.tile:hover {
 
     button.tile {
         padding: 60px 50px;
-        font-size: 14px;
     }
 }
 
@@ -343,10 +341,8 @@ button.tile:hover {
 
     button.tile {
         padding: 40px 30px;
-        font-size: 12px;
     }
 }
-
 
 form {
     background-color: #181818;
