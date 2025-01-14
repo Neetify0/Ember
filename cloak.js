@@ -28,7 +28,6 @@ function openCloakedTab() {
     win.document.body.appendChild(iframe);
 
     localStorage.setItem('redirect', '/');
-    
-    window.close();
+
     window.location.href = 'about:blank';
 }
