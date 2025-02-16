@@ -6,8 +6,8 @@
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <script src="/cloak.js"></script> 
     <script src="/redirect.js"></script> 
-    <script src="/cloak.js"></script>    
 </head>
 <body>
 
@@ -19,16 +19,19 @@
             <a href="/">Home</a>
             <a href="/apps/">Apps</a>
             <a href="/games/">Games</a>                 
-
+            <a href="/settings/">Settings</a>
         </div>
     </nav>
 
     <div class="center-content-wrapper">
-        <iframe id="gameIframe" style="width:95%; height:900px; border-radius: 15px;"></iframe>
+        <iframe id="gameIframe" style="width:100%; height: 1000px; border-radius: 15px;"></iframe>
     </div>
 
     <div class="description-item">
         <div class="description">
+            <!-- <a id="externalLink" href="" class="description-btn">
+                <img src="/images/external.png" alt="Parent Icon">
+            </a>  !-->
             <button class="description-btn2" onclick="toggleFullscreen()">
                 <img src="/images/fullscreen.png" alt="Fullscreen Icon">
             </button>
@@ -83,9 +86,9 @@
         const gameLink = getGameLinkFromURL();
         if (gameLink) {
             const iframe = document.getElementById('gameIframe');
-            const externalLink = document.getElementById('externalLink');
+            /* const externalLink = document.getElementById('externalLink'); */
             iframe.src = gameLink;
-            externalLink.href = gameLink;
+            /* externalLink.href = gameLink; */
 
             const gameName = gameLink.split('/')[2].replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
             
