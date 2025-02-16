@@ -1,5 +1,5 @@
 function enter() {
-    localStorage.setItem('decrypted5912', 'true');
+    localStorage.setItem('decrypted294500281234', 'true');
     if (localStorage.getItem('redirect')) {
         window.location.href = localStorage.getItem('redirect');
         localStorage.setItem('redirect', '/');
@@ -9,7 +9,7 @@ function enter() {
 }
 
 if (window.location.pathname !== '/lock/') {
-    if (localStorage.getItem('decrypted5912') !== 'true') {
+    if (localStorage.getItem('decrypted294500281234') !== 'true') {
         localStorage.setItem('redirect', window.location.href);
         window.location.href = '/lock/';
     }
