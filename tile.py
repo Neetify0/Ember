@@ -36,8 +36,8 @@ def remake_index_html(directory, game_folders):
     <title>Ember</title>
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-    <script src="/cloak.js"></script> 
-    <script src="/redirect.js"></script> 
+
+   
 </head>
 <body>
 
@@ -49,7 +49,7 @@ def remake_index_html(directory, game_folders):
             <a href="/">Home</a>
             <a href="/apps/">Apps</a>
             <a href="/games/">Games</a>                 
-            <a href="/settings/">Settings</a>
+
         </div>
     </nav>
 
